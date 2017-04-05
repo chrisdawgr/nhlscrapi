@@ -13,7 +13,7 @@ setup(
     
   author='Rob Howley',
   author_email='howley.robert@gmail.com',
-  url='https://github.com/robhowley/nhlscrapi',
+  url='https://github.com/chrisdawgr/nhlscrapi',
     
   packages=find_packages(),
     
