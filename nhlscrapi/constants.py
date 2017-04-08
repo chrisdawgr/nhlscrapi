@@ -244,3 +244,174 @@ TEAMS_BY_ABBR = {
   'WIJ': 'Winnipeg Jets (orig)', # (1st) (1979-80 - 1995-96)
   'WPG': 'Winnipeg Jets', # (2011-12 - present)
 }
+
+
+TEAM_TO_ABB = {
+  'Anaheim Ducks' : 'ANA' , # (1993-94 - present)
+  'ANAHEIM DUCKS' : 'ANA' , # (1993-94 - present)
+
+  'Arizona Coyotes': 'ARI' , # (2014-15 - present)
+  'ARIZONA COYOTES': 'ARI' , # (2014-15 - present)
+
+  'Atlanta Flames': 'ATF', # (1972-73 - 1979-80)
+  'ATLANTA FLAMES': 'ATF', # (1972-73 - 1979-80)
+
+  'Atlanta Trashers':'ARL' , # (1999-00 - 2010-11)
+  'ATLANTA THRASHERS':'ARL' , # (1999-00 - 2010-11)
+
+  'Boston Bruins':'BOS' , # (1925-26 - present)
+  'BOSTON BRUINS':'BOS' , # (1925-26 - present)
+
+  'Brooklyn Americans':'BKN' , # (1941-1942)
+  'BROOKLYN AMERICANS':'BKN' , # (1941-1942)
+
+  'Buffalo Sabres':'BUF' , # (1970-71 - present)
+  'BUFFALO SABRES':'BUF' , # (1970-71 - present)
+
+  'Calgary Flames':'CGY' , # (1980-81 - present)
+  'CALGARY FLAMES':'CGY' , # (1980-81 - present)
+
+  'California Golden Seals':'CLF' , # (1970-71 - 1975-76)
+  'California Golden Seals':'CLF' , # (1970-71 - 1975-76)
+
+  'Carolina Hurricanes':'CAR' , # (1997-98 - present)
+  'CAROLINA HURRICANES':'CAR' , # (1997-98 - present)
+
+  'Chicago Blackhawks':'CHI' , # (1926-27 - present)
+  'CHICAGO BLACKHAWKS':'CHI' , # (1926-27 - present)
+
+  'Cleveland Barons':'CLE' , # (1976-77 - 1977-78)
+  'Cleveland Barons':'CLE' , # (1976-77 - 1977-78)
+
+  'Colorado Rockies':'COR' , # (1976-77 - 1981-82)
+  'Colorado Rockies':'COR' , # (1976-77 - 1981-82)
+
+  'Colorado Avalanche':'COL' , # (1995-96 - present)
+  'COLORADO AVALANCHE':'COL' , # (1995-96 - present)
+
+  'Columbus Blue Jackets':'CBJ' , # (2000-01 - present)
+  'COLUMBUS BLUE JACKETS':'CBJ' , # (2000-01 - present)
+
+  'Dallas Stars':'DAL' , # (1993-94 - present)
+  'DALLAS STARS':'DAL' , # (1993-94 - present)
+
+  'Detroit Cougars':'DTC' , # (1926-27 - 1929-30)
+  'Detroit Cougars':'DTC' , # (1926-27 - 1929-30)
+
+  'Detroit Falcons':'DTF' , # (1930-31 - 1931-32)
+  'Detroit Falcons':'DTF' , # (1930-31 - 1931-32)
+
+  'Detroit Red Wings':'DET' , # (1932-33 - present)
+  'DETROIT RED WINGS':'DET' , # (1932-33 - present)
+
+  'Edmonton Oilers':'EDM' , # (1979-80 - present)
+  'EDMONTON OILERS':'EDM' , # (1979-80 - present)
+
+  'Florida Panthers':'FLA' , # (1993-94 - present)
+  'FLORIDA PANTHERS':'FLA' , # (1993-94 - present)
+
+  'Hamilton Tigers':'HAM' , # (1920-21 - 1924-25)
+  'Hamilton Tigers':'HAM' , # (1920-21 - 1924-25)
+
+  'Hartford Whalers':'HAR' , # (1979-80 - 1996-97)
+  'Hartford Whalers':'HAR' , # (1979-80 - 1996-97)
+
+  'Kansas City Scouts':'KC' , # (1974-75 - 1975-76)
+  'Kansas City Scouts':'KC' , # (1974-75 - 1975-76)
+
+  'Los Angeles Kings':'LA' , # (1967-68 - present)
+  'LOS ANGELES KINGS':'LA' , # (1967-68 - present)
+
+  'Minnesota Wild':'MIN' , # (2000-01 - present)
+  'MINNESOTA WILD':'MIN' , # (2000-01 - present)
+
+  'Minnesota North Stars':'MNS' , # (1967-68 - 1992-93)
+  'Minnesota North Stars':'MNS' , # (1967-68 - 1992-93)
+
+  'Montreal Canadiens':'MTL' , # (1917-18 - present)
+  'MONTREAL CANADIENS':'MTL' , # (1917-18 - present)
+
+  'Montreal Maroons':'MTM' , # (1924-25 - 1937-38)
+  'Montreal Maroons':'MTM' , # (1924-25 - 1937-38)
+
+  'Montreal Wanderers':'MTW' , # (1917-18)
+  'Montreal Wanderers':'MTW' , # (1917-18)
+
+  'Nashville Predators':'NSH' , # (1998-99 - present)
+  'NASHVILLE PREDATORS':'NSH' , # (1998-99 - present)
+
+  'New Jersey Devils':'NJ' , # (1982-83 - present)
+  'NEW JERSEY DEVILS':'NJ' , # (1982-83 - present)
+
+  'New York Americans':'NYA' , # (1925-26 - 1940-41)
+  'New York Americans':'NYA' , # (1925-26 - 1940-41)
+
+  'New York Islanders':'NYI' , # (1972-73 - present)
+  'NEW YORK ISLANDERS':'NYI' , # (1972-73 - present)
+
+  'New York Rangers':'NYR' , # (1926-27 - present)
+  'NEW YORK RANGERS':'NYR' , # (1926-27 - present)
+
+  'Oakland Seals':'OAK' , # (1967-68 - 1969-70)
+  'Oakland Seals':'OAK' , # (1967-68 - 1969-70)
+
+  'Philadelphia Flyers':'PHI' , # (1967-68 - present)
+  'PHILADELPHIA FLYERS':'PHI' , # (1967-68 - present)
+
+  'Philadelphia Quakers':'PHQ' , # (1930-31)
+  'Philadelphia Quakers':'PHQ' , # (1930-31)
+
+  'Phoenix Coyotes':'PHO' , # (1996-97 - 2013-14)
+  'PHOENIX COYOTES':'PHO' , # (1996-97 - 2013-14)
+
+  'Pittsburgh Penguins':'PIT' , # (1967-68 - present)
+  'PITTSBURGH PENGUINS':'PIT' , # (1967-68 - present)
+
+  'Pittsburgh Pirates':'PIP' , # (1925-26 - 1929-30)
+  'Pittsburgh Pirates':'PIP' , # (1925-26 - 1929-30)
+
+  'Ottawa Senators':'OTT' , # (1992-93 - present)
+  'OTTAWA SENATORS':'OTT' , # (1992-93 - present)
+
+  'Ottawa Senators (orig)':'OTS' , # (1917-18 - 1930-31, 1932-33 - 1933-34)
+  'Ottawa Senators (orig)':'OTS' , # (1917-18 - 1930-31, 1932-33 - 1933-34)
+
+  'Quebec Nordiques':'QUE' , # (1979-80 - 1994-95)
+  'Quebec Nordiques':'QUE' , # (1979-80 - 1994-95)
+
+  'Quebec Bulldogs':'QUB' , # (1919-20)
+  'Quebec Bulldogs':'QUB' , # (1919-20)
+
+  'St Louis Blues':'STL' , # (1967-68 - present)
+  'ST LOUIS BLUES':'STL' , # (1967-68 - present)
+
+  'St Louis Eagles':'STE' , # (1934-35)
+  'St Louis Eagles':'STE' , # (1934-35)
+
+  'San Jose Sharks':'SJ' , # (1991-92 - present)
+  'SAN JOSE SHARKS':'SJ' , # (1991-92 - present)
+
+  'Tampa Bay Lightning':'TB' , # (1992-93 - present)
+  'TAMPA BAY LIGHTNING':'TB' , # (1992-93 - present)
+
+  'Toronto Maple Leafs':'TOR' , # (1926-27 - present)
+  'TORONTO MAPLE LEAFS':'TOR' , # (1926-27 - present)
+
+  'Toronto Arenas':'TRA' , # (1917-18 - 1918-19)
+  'Toronto Arenas':'TRA' , # (1917-18 - 1918-19)
+
+  'Toronto St Pats':'TRS' , # (1919-20 - 1925-26)
+  'Toronto St Pats':'TRS' , # (1919-20 - 1925-26)
+
+  'Vancouver Canucks':'VAN' , # (1970-71 - present)
+  'VANCOUVER CANUCKS':'VAN' , # (1970-71 - present)
+
+  'Washington Capitals':'WSH' , # (1974-75 - present)
+  'WASHINGTON CAPITALS':'WSH' , # (1974-75 - present)
+
+  'Winnipeg Jets (orig)':'WIJ' , # (1st) (1979-80 - 1995-96)
+  'Winnipeg Jets (orig)':'WIJ' , # (1st) (1979-80 - 1995-96)
+
+  'Winnipeg Jets':'WPG' , # (2011-12 - present)
+  'WINNIPEG JETS':'WPG' , # (2011-12 - present)
+}
