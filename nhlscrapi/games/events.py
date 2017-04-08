@@ -1,7 +1,7 @@
 
 
 from nhlscrapi._tools import build_enum
-
+from pprint import pprint
 
 EventType = build_enum('Event', 'ShotAttempt', 'Shot', 'Block', 'Miss', 'Goal',
     'Hit', 'FaceOff', 'Giveaway', 'Takeaway', 'Penalty', 'Stoppage', 'ShootOutAtt',
@@ -88,6 +88,7 @@ class ShootOutEnd(Stoppage):
         
         
 class Penalty(Event):
+    #pprint (vars(Event))
     def __init__(self):
         super(Penalty, self).__init__(EventType.Penalty)
         

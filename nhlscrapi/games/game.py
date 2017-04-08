@@ -9,6 +9,7 @@ from nhlscrapi.games.rosters import Rosters
 from nhlscrapi.games.playbyplay import PlayByPlay
 from nhlscrapi.games.faceoffcomp import FaceOffComparison
 from nhlscrapi.games.eventsummary import EventSummary
+from nhlscrapi.games.getGameSummary import *
 
 
 """Enum denoting whether the game is regular season or playoff"""
@@ -109,29 +110,29 @@ class Game(object):
         # report back the game's linesman
         print(g.linesman)
     """
-    
+
     def __init__(self, game_key = None, cum_stats = {}):
-        
+
         # conversion to GameKey from tuple allowed
         self.game_key = game_key if hasattr(game_key, 'to_tuple') else GameKey(key_tup=game_key)
-        
+
         self.toi = TOI(self.game_key)
         """The :py:class:`.TOI` summary"""
-        
+
         self.rosters = Rosters(self.game_key)
         """The :py:class:`.Rosters` summary"""
-        
-        #self.summary = GameSummary(game_key)
-        
+
+        self.summary = getGameSummary(self.game_key)
+
         self.face_off_comp = FaceOffComparison(self.game_key)
         """The :py:class:`.FaceOffComparison` summary"""
-        
+
         self.play_by_play = PlayByPlay(self.game_key, cum_stats)
         """The :py:class:`.PlayByPlay` summary"""
-        
+
         self.event_summary = EventSummary(self.game_key)
         """The :py:class:`.EventSummary` summary"""
-  
+
     def load_all(self):
         """
         Force all reports to be loaded and parsed instead of lazy loading on demand.
@@ -139,10 +140,13 @@ class Game(object):
         :returns: ``self`` or ``None`` if load fails
         """
         try:
-            self.toi.load_all()
+            #self.toi.load_all()
+            
             self.rosters.load_all()
             #self.summary.load_all()
             self.play_by_play.load_all()
+            self.summary.parseSummary()
+            # NOTE call function here!
             self.face_off_comp.load_all()
             return self
         except Exception as e:

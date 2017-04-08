@@ -246,6 +246,7 @@ class Fenwick(ShotEventTallyBase):
     """
     def __init__(self):
         self.score = Score()
+
         
         def _count_play(self, play):
         
@@ -258,21 +259,21 @@ class Fenwick(ShotEventTallyBase):
             if is_p_type:
                 scr = 0
                 if len(self.score.teams):
+                    # Get first team current goals
                     t = self.score.teams[0]
                     scr = self.score.total[t]
                 if len(self.score.teams) > 1:
                     t = self.score.teams[1]
                     scr -= self.score.total[t]
-          
+
                 close = (scr <= 2 and play.period < 3) or (scr <= 1 and play.period >= 3)
-        
+
             return is_p_type and close
-        
+
         super(Fenwick, self).__init__(
             count_play=lambda play: _count_play(self, play)
         )
-        
-  
+
     def update(self, play):
         self.score.update(play)
         super(Fenwick, self).update(play)
