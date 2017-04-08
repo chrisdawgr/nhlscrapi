@@ -57,12 +57,13 @@ class ReportLoader(object):
         
         if self.__lx_doc is None:
             cn = NHLCn()
+            #print self.report_type
           
             if hasattr(cn, self.report_type):
                 html = getattr(cn, self.report_type)(self.game_key)
             else:
                 raise ValueError('Invalid report type: %s' % self.report_type)
-          
+            #print html
             if cn.req_err is None:
                 self.__lx_doc = fromstring(html)
             else:

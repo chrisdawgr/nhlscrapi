@@ -20,7 +20,6 @@ class NHLCn(object):
         url = [ self.__domain, "scores/htmlreports/", str(seas-1), str(seas),
                 "/", rep_code, "0", str(gt), ("%04i" % (num)), ".HTM" ]
         url = ''.join(url)
-
         return self.__open(url)
 
     def game_roster(self, game_key):
@@ -100,5 +99,4 @@ class NHLCn(object):
             self.html_src = req.text
         except Exception as e:
             self.req_err = e
-
         return self.html_src
