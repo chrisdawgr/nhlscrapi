@@ -3,6 +3,7 @@ import sys
 from lxml.html import fromstring
 from lxml.html import tostring
 import lxml
+from lxml import etree
 from nhlscrapi.scrapr.teamnameparser import team_abbr_parser
 from nhlscrapi.constants import TEAM_TO_ABB as ABB
 
@@ -41,6 +42,7 @@ class getGameSummary(object):
       html_src = req.text
     except Exception as e:
       print e
+      print "error getting html: getGameSummary"
       html_src = "error"
     print self.url
     self.html_src = fromstring(html_src)
@@ -48,18 +50,24 @@ class getGameSummary(object):
   def parseSummary(self):
     teams = {}
     PP = {}
+    EV = {}
     self.__open()
     lx_doc = self.html_src
+
     main = lx_doc.xpath('//*[@id="MainTable"]')[0]
+    text_file = open("Output.txt", "w")
+    text_file.write(etree.tostring(main, pretty_print=True))
+    text_file.close()
     away_team = main.find('.//table[@id="Visitor"]')
     away_team = away_team.findall('.//td[@align="center"]')[-1].text
     home_team = main.find('.//table[@id="Home"]')
     home_team = home_team.findall('.//td[@align="center"]')[-1].text
-
     teams['home'] = ABB[home_team]
     teams['away'] = ABB[away_team]
     PP[teams['home']] = 0
     PP[teams['away']] = 0
+    EV[teams['home']] = 0
+    EV[teams['away']] = 0
 
     scr_summ = main.xpath('child::tr[4]//tr')
 
@@ -67,9 +75,16 @@ class getGameSummary(object):
       if r.get('class') in ['oddColor','evenColor']:
         tds = r.xpath('./td')
         scr = [td.xpath('text()') for td in tds[:8]]
-        if scr[3][0] == 'PP':
-          PP[team_abbr_parser(scr[4][0])] += 1
-
+        try:
+          if scr[3][0] == 'EV':
+            EV[team_abbr_parser(scr[4][0])] += 1
+        except Exception:
+          continue
+        try:
+          if scr[3][0] == 'PP':
+            PP[team_abbr_parser(scr[4][0])] += 1
+        except Exception:
+          continue
     pen_sum = main.find('.//table[@id="PenaltySummary"]')
     test = pen_sum.findall('.//table')
     tbl_list = []
@@ -84,13 +99,16 @@ class getGameSummary(object):
           text_file.write(s)
           text_file.close()
           tbl_list.append(t)
-    away_pen = tbl_list[0].find('.//td[@align="left"]').text
-    home_pen = tbl_list[1].find('.//td[@align="left"]').text
-
-    away_pen = int(away_pen[:away_pen.index('-')])
-    home_pen = int(home_pen[:home_pen.index('-')])
+    #test:
+    a_pen = tbl_list[0].findall('.//td[@align="left"]')
+    h_pen = tbl_list[1].findall('.//td[@align="left"]')
+    away_pen = a_pen[-1].text
+    home_pen = h_pen[-1].text
+    away_pen = int(away_pen[away_pen.index('-')+1:away_pen.index('/')])
+    home_pen = int(home_pen[home_pen.index('-')+1:home_pen.index('/')])
 
     PP[teams['home']] = (home_pen,PP[teams['home']])
     PP[teams['away']] = (away_pen,PP[teams['away']])
     self.PP = PP
+    self.EV = EV
     self.teams = teams

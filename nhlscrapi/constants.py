@@ -385,6 +385,10 @@ TEAM_TO_ABB = {
   'St Louis Blues':'STL' , # (1967-68 - present)
   'ST LOUIS BLUES':'STL' , # (1967-68 - present)
 
+
+  'St. Louis Blues':'STL' , # (1967-68 - present)
+  'ST. LOUIS BLUES':'STL' , # (1967-68 - present)
+
   'St Louis Eagles':'STE' , # (1934-35)
   'St Louis Eagles':'STE' , # (1934-35)
 
